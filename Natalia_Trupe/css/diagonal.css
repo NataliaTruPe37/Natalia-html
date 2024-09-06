@@ -1,0 +1,49 @@
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    position: relative; 
+    overflow: hidden; 
+}
+
+.top-container, .middle-container, .bottom-container {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.top-container {
+    background-color: blue;
+    border: 10px solid black;
+    padding: 20px;
+    top: 0;
+    left: 0;
+}
+
+.middle-container {
+    background-color: red;
+    border: 20px solid black;
+    top: 50%; /* Slightly below top container */
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.bottom-container {
+    background-color: yellow;
+    border: 10px solid black;
+    bottom: 0;
+    right: 0;
+}
+
+.text {
+    position: fixed; 
+    bottom: 0; 
+    left: 0; 
+    padding: 10px;
+    font-size: 16px;
+}
