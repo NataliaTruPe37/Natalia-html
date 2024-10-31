@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Express Test</title>
+</head>
+<body>
+    <h1>Welcome!</h1>
+
+    <form action="/greet" method="get">
+        <input type="text" name="name" placeholder="Enter your name" required>
+        <button type="submit">Greet Me</button>
+    </form>
+
+    <% if (names.length > 0) { %>
+        <h2>Greetings:</h2>
+        <ul>
+            <% names.forEach(name => { %>
+                <li><a href="/greet/<%= name %>"><%= name %></a></li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+    <% if (error) { %>
+        <p style="color:red;"><%= error %></p>
+    <% } %>
+
+    <h2>TODO List</h2>
+    <form action="/task" method="post">
+        <input type="text" name="task" placeholder="New Task" required>
+        <button type="submit">Add Task</button>
+    </form>
+    <ul>
+        <% tasks.forEach((task, index) => { %>
+            <li>
+                <%= task %> 
+                <form action="/task/<%= index %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+            </li>
+        <% }) %>
+    </ul>
+</body>
+</html>

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 <html>
-<!--
-    Make sure that this exercise meets the organization standards we want for a good project. aka "organization"
--->
-
 <head runat="server">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,20 +10,24 @@
         function checkPrime() {
             var id = document.getElementById("num");
             var number = parseInt(document.getElementById("num").value);
-            var maxNum = parseInt(1299827);
+            var maxNum = 1299827;
+
             if (number < maxNum && !isNaN(number)) {
                 for (var i = number + 1; i < maxNum; i++) {
-                    //TODO: check if the current number is a prime or not
-                    // If it is, then return it
-                    continue;
+                    if (isPrime(i)) {
+                        id.value = i;
+                        break; // Detener el bucle al encontrar el primer número primo
+                    }
                 }
             } else {
                 window.alert("Please Enter Number Below 1299827 or Enter A Valid Integer");
                 id.value = "";
             }
         }
+
         function isPrime(num) {
-            for (var i = 2; i < num; i++) {
+            if (num <= 1) return false;
+            for (var i = 2; i <= Math.sqrt(num); i++) { // Optimización: solo hasta la raíz cuadrada de num
                 if (num % i === 0) {
                     return false;
                 }
@@ -40,11 +40,11 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            <input type="text" id="num" />
+            <input type="text" id="num" placeholder="Enter a number" />
             <button id="btn" onclick="checkPrime();return false">
-                Click To Get Next Prime Number</button>
+                Click To Get Next Prime Number
+            </button>
         </div>
     </form>
 </body>
-
 </html>

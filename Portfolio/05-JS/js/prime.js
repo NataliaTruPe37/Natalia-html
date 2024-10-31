@@ -1,30 +1,46 @@
-/*
-    Prime Factorization - Have the user enter a number and find
-    all Prime Factors (if there are any) and display them.
-*/
+// Función para obtener los factores primos de un número y mostrar el resultado
+function getPrimeFactors() {
+  // Obtener el número ingresado por el usuario
+  var n = parseInt(document.getElementById("num").value);
+  
+  // Validar que el número es un entero positivo
+  if (isNaN(n) || n <= 1) {
+      document.getElementById("pf").innerText = "Please enter a valid integer greater than 1.";
+      return;
+  }
+  
+  // Llamar a la función que encuentra los factores primos
+  var factors = findPrimeFactors(n);
+  
+  // Mostrar los factores primos en el HTML
+  document.getElementById("pf").innerText = "Prime Factors: " + factors.join(", ");
+}
 
-var getPrimeFactors = function (n) {
-  "use strict";
+// Función que encuentra los factores primos de un número dado
+function findPrimeFactors(n) {
+  var factors = [];
+  var i = 2;
 
-  function isPrime(n) {
-    var i;
-
-    for (i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i === 0) {
-        return false;
+  // Encontrar los factores primos
+  while (n > 1) {
+      if (n % i === 0 && isPrime(i)) {
+          factors.push(i);
+          n /= i;
+      } else {
+          i++;
       }
-    }
-    return true;
   }
 
-  var i,
-    sequence = [];
+  return factors;
+}
 
-  //TODO: Check which numbers are factors of n and also check if
-  // that number also happens to be a prime
-
-  return sequence;
-};
-
-// the prime factors for this number are: [ 2, 3, 5, 7, 11, 13 ]
-console.log(getPrimeFactors(30030));
+// Función auxiliar que verifica si un número es primo
+function isPrime(num) {
+  if (num <= 1) return false;
+  for (var i = 2; i <= Math.sqrt(num); i++) {
+      if (num % i === 0) {
+          return false;
+      }
+  }
+  return true;
+}

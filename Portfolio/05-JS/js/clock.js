@@ -10,31 +10,25 @@ function drawFace(ctx, radius) {
   ctx.arc(0, 0, radius, 0, 2 * Math.PI);
   ctx.fillStyle = "white";
   ctx.fill();
-
-  // Draw the edge circle with gradient
-  // TODO: (Optional) add a gradient circle
-
-  // Center circle
-  // TODO: make the central black circle
 }
 
 function drawNumbers(ctx, radius) {
-  //TODO: Make sure you show all the numbers
-  var ang;
-  var num = 1;
-  ctx.font = radius * 0.15 + "px arial";
+  ctx.font = radius * 0.15 + "px Arial";
   ctx.textBaseline = "middle";
-  ctx.fillStyle = "#333";
   ctx.textAlign = "center";
-  ang = (num * Math.PI) / 6;
-  ctx.rotate(ang);
-  ctx.translate(0, -radius * 0.85);
-  ctx.rotate(-ang);
-  ctx.fillText(num.toString(), 0, 0);
-  ctx.rotate(ang);
-  ctx.translate(0, radius * 0.85);
-  ctx.rotate(-ang);
+  ctx.fillStyle = "#333";
+  for (var num = 1; num <= 12; num++) {
+      var ang = num * Math.PI / 6; // Calcular el ángulo para cada número
+      ctx.rotate(ang); // Rotar el contexto al ángulo adecuado
+      ctx.translate(0, -radius * 0.85); // Mover hacia afuera en el radio del círculo
+      ctx.rotate(-ang); // Ajustar para que el número no se rote
+      ctx.fillText(num.toString(), 0, 0); // Dibujar el número
+      ctx.rotate(ang); // Volver a la rotación original
+      ctx.translate(0, radius * 0.85); // Volver a la posición original
+      ctx.rotate(-ang); // Restaurar el contexto
+  }
 }
+
 
 function drawTime(ctx, radius) {
   // TODO: Calculate the angles of every hand depending on the time
