@@ -1,12 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personal Website - CSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+    <script src="server.js" defer></script>
 </head>
-<body>
-  
+<body style="background-color: rgb(224, 207, 207);">
+    <div class="anchor">
+        <h1 id="name">Natalia Trujillo Perez</h1>
+        <img id="profile-pic" src="IMG/me.jpg" alt="My Picture"/>
+    </div>
+    <hr>
+    <div>
+        <blockquote>"Free to be" <br/>Life</blockquote>
+        <p><b>My Favorite Spots:</b> <a href="destinations.html">Destinations</a></p>
+        <b>My </b><a href="#education">education</a>
+    </div>
+    <hr>
+    <div>
+        <h1>Skills</h1>
+        <ul id="skills-list">
+            <li>Solving Problems (100%)</li>
+            <li>Making People Laugh (100%)</li>
+            <li>Teamwork (80%)</li>
+            <li>Strategic Planning (70%)</li>
+            <li>Programming (40%)</li>
+        </ul>
+        <button id="add-skill">Add a Skill</button>
+    </div>
+    <hr>
+    <div>
+        <h1>Favorite Food Countries</h1>
+        <ol id="favorite-food">
+            <li>Italian</li>
+            <li>Mexican</li>
+            <li>Japanese</li>
+            <li>American</li>
+            <li>Spanish</li>
+        </ol>
+        <button id="remove-food">Remove Last Country</button>
+    </div>
 </body>
 </html>

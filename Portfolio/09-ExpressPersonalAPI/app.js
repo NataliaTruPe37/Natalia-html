@@ -1,13 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const methodOverride = require('method-override'); 
+const methodOverride = require('method-override');
 
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method')); 
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs'); 
+app.set('views', path.join(__dirname, 'views')); 
 
 let names = [];
 let tasks = [];
@@ -51,7 +52,7 @@ app.get('/task', (req, res) => {
 });
 
 app.delete('/task/:index', (req, res) => {
-    const index = req.params.index;
+    const index = parseInt(req.params.index);
     if (index >= 0 && index < tasks.length) {
         tasks.splice(index, 1);
     }

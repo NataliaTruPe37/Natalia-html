@@ -1,1 +1,7 @@
-... Han shot first! ...
+Hello, World!
+Star Wars quote library loaded.
+"Do. Or do not. There is no try." — Yoda
+Libraries for superheroes and supervillains loaded.
+An epic battle between Spider-Man and Joker begins!
+Attempting to read file at: /path/to/your/project/data/input.txt
+Contenido de input.txt: ... Han shot first! ...

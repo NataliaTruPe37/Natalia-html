@@ -1,8 +1,27 @@
 html {
     min-height: 100%;
     position: relative;
-}
-
-body {
+  }
+  
+  body {
     background-color: beige !important;
-}
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 5px;
+  }
+  
