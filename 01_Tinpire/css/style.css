@@ -1,0 +1,110 @@
+/* Gradient Background */
+.gradient-background {
+  background: linear-gradient(300deg, #feffff, #070100, #ff4c68);
+  background-size: 180% 180%;
+  animation: gradient-animation 18s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Icon Square */
+.icon-square {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Profile Image */
+.profile-img {
+  border-radius: 50%;
+  height: 100px;
+  width: 100px;
+  margin: 20px auto;
+}
+
+/* Title Section */
+#title h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #fff;
+}
+
+#title .btn {
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+}
+
+/* Testimonial Section */
+#testimonial h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+#testimonial p {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+#testimonial img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Pricing Section */
+#pricing .card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#pricing .card-header {
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #f8f9fa;
+}
+
+#pricing .card-body h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#pricing .btn {
+  padding: 0.75rem 1.5rem;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(300deg, #070100, #ff4c68, #feffff);
+  padding: 2rem 0;
+  text-align: center;
+  color: #fff;
+}
+
+footer .nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+footer .nav-link:hover {
+  text-decoration: underline;
+}
